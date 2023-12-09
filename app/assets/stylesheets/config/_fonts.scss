@@ -1,0 +1,38 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Reem+Kufi&family=Reenie+Beanie&family=Urbanist&display=swap');
+
+// Define fonts for body and headers
+$body-font: 'Urbanist', sans-serif;
+$headers-font: 'Reem Kufi', sans-serif;
+$logo-font: 'Reenie Beanie', cursive;
+
+body, p {
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
+// Define links style
+a {
+  text-decoration: none !important;
+  color: #3a3a3a;
+  p {
+    color: #3a3a3a;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a3a3a;
+  }
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #000000;
+  p {
+    color: #000000;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+  }
+}

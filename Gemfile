@@ -49,6 +49,7 @@ gem "sassc-rails"
 gem "bootstrap", "~> 5.2"
 gem "simple_form"
 gem "autoprefixer-rails"
+gem "font-awesome-sass"
 
 # Devise
 gem "devise"
