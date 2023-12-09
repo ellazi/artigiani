@@ -48,9 +48,13 @@ gem "sassc-rails"
 # Bootstrap and simple form
 gem "bootstrap", "~> 5.2"
 gem "simple_form"
+gem "autoprefixer-rails"
 
 # Devise
 gem "devise"
+
+# Cloudinary
+gem "cloudinary"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
