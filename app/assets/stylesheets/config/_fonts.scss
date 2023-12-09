@@ -1,5 +1,6 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Afacad&family=Reem+Kufi&family=Reenie+Beanie&family=Urbanist&display=swap');
+@import "colors";
 
 // Define fonts for body and headers
 $body-font: 'Urbanist', sans-serif;
@@ -17,22 +18,22 @@ h1, h2, h3, h4, h5, h6 {
 // Define links style
 a {
   text-decoration: none !important;
-  color: #3a3a3a;
-  p {
-    color: #3a3a3a;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    color: #3a3a3a;
-  }
-}
-
-a:hover {
-  text-decoration: none !important;
   color: #000000;
   p {
     color: #000000;
   }
   h1, h2, h3, h4, h5, h6 {
     color: #000000;
+  }
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: $grey;
+  p {
+    color: $grey;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $grey;
   }
 }
