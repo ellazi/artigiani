@@ -1,0 +1,113 @@
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 15px,
+    rgba(0, 0, 0, 0.12) 0px -12px 13px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 10px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.shadow-dark {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.background-standard {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card1 {
+  background-image: asset-url('card1.jpg');
+}
+
+.card2 {
+  background-image: asset-url('card2.jpg');
+}
+
+.card3 {
+  background-image: asset-url('card3.jpg');
+}
+
+.card4 {
+  background-image: asset-url('card4.jpg');
+}
+
+.card5 {
+  background-image: asset-url('card5.jpg');
+}
+
+.card-third {
+  position: relative;
+  width: calc(33% - 20px);
+  height: 180px;
+  background-color: $grey;
+  padding: 90px 70px;
+  h2, h3, h4, h5, h6 {
+    color:white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    transition: opacity 0.3s ease;
+    background-clip: content-box;
+    z-index: 0;
+  }
+  &:hover::before {
+    opacity: 0;
+    z-index: 0;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.card-half {
+  position: relative;
+  width: calc(50% - 20px);
+  background-color: $grey;
+  height: 200px;
+  padding: 100px 70px;
+  h2, h3, h4, h5, h6 {
+    color:white !important;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  &::before {
+    content: "";
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    transition: opacity 0.3s ease;
+    background-clip: content-box;
+    z-index: 0;
+  }
+  &:hover::before {
+    opacity: 0;
+    z-index: 0;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.row-custom {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
