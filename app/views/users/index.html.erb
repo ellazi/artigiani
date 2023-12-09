@@ -1,0 +1,9 @@
+<div class="container-custom">
+  <% @artisans.each do |artisan| %>
+    <a href="<%= user_path(artisan) %>"><div>
+      <h3><%= "#{artisan.first_name} #{artisan.last_name}" %></h3>
+      <p><%= artisan.location %></p>
+      <p><%= artisan.description %></p>
+    </div></a>
+  <% end %>
+</div>
