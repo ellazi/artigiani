@@ -106,8 +106,23 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  gap: 15px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.gap-15 {
+  gap: 15px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+// artisans
+.artisan-card {
+  width: calc(33% - 20px);
+  height: 400px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 24px 25px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

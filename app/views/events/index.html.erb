@@ -1,0 +1,15 @@
+<div class="container-custom">
+  <div class="row-custom gap-30">
+    <% @events.each do |event| %>
+      <div class="artisan-card">
+        <a href="<%= event_path(event) %>">
+          <h3><%= event.title %></h3>
+          <p><%= event.location %></p>
+          <p><%= event.description %></p>
+          <p><%= event.start_time %></p>
+          <p><%= event.end_time %></p>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
