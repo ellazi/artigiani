@@ -1,15 +1,3 @@
-.shadow {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 15px,
-    rgba(0, 0, 0, 0.12) 0px -12px 13px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 10px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.shadow-dark {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
 .background-standard {
   background-size: cover;
   background-position: center;
@@ -38,10 +26,11 @@
 
 .card-third {
   position: relative;
-  width: calc(33% - 15px);
+  width: calc(33.3% - 15px);
   height: 180px;
   background-color: $grey;
   padding: 90px 70px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h2, h3, h4, h5, h6 {
     color:white !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -75,6 +64,7 @@
   background-color: $grey;
   height: 200px;
   padding: 100px 70px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h2, h3, h4, h5, h6 {
     color:white !important;
     position: relative;
@@ -125,4 +115,60 @@
   height: 400px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 24px 25px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+// items
+.item-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - 30px);
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  h3 {
+    margin-bottom: 2px;
+    line-height: 30px;
+    height: 70px;
+  }
+  .text {
+    padding: 10px 30px;
+    z-index: 1;
+    bottom: 0;
+    position: absolute;
+    height: 160px;
+  }
+  img {
+    top: 0;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    z-index: 0;
+    position:absolute;
+  }
+  &:hover {
+    h3, p {
+      color: #000;
+    }
+    background-color: $light-yellow;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+}
+
+.item-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0;
+  height: 280px;
+  i {
+    z-index: 2;
+    padding: 25px;
+    align-self: flex-end;
+    color: #ffffffab;
+    &:hover {
+      color: #fff;
+    }
+  }
 }

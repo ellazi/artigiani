@@ -1,0 +1,20 @@
+<div class="container-custom">
+  <div class="row-custom gap-30">
+    <% @items.each do |item| %>
+      <div class="item-card">
+        <a href="<%= item_path(item) %>">
+          <div class="text">
+          <h3><%= item.name %></h3>
+          <p><%= item.user.company %></p>
+          <p><%= item.price %> €</p>
+          </div>
+          <div class="item-img">
+            <i class="fa-solid fa-heart fa-lg"></i>
+            <i class="fa-solid fa-bag-shopping fa-lg"></i>
+            <%= image_tag(url_for(item.photos.first)) %>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
