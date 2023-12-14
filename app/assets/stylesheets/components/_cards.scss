@@ -36,6 +36,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
+    font-family: $body-font;
   }
   &::before {
     content: "";
@@ -70,6 +71,7 @@
     position: relative;
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: $body-font;
   }
   &::before {
     content: "";
@@ -114,7 +116,28 @@
   width: calc(33% - 20px);
   height: 400px;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 24px 25px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  &:hover {
+    background-color: $extra-light-grey;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    h3, p {
+      color: #000;
+    }
+  }
+}
+
+// events
+.event-card {
+  height: 450px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 20px;
+  &:hover {
+    background-color: $extra-light-grey;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    h3, p {
+      color: #000;
+    }
+  }
 }
 
 // items

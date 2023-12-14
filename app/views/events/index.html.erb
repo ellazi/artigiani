@@ -1,7 +1,8 @@
-<div class="container-custom">
-  <div class="row-custom gap-30">
+<div class="container-custom flex">
+  <div>
+  <div class="row-event gap-30">
     <% @events.each do |event| %>
-      <div class="artisan-card">
+      <div class="event-card">
         <a href="<%= event_path(event) %>">
           <h3><%= event.title %></h3>
           <p><%= event.location %></p>
@@ -11,5 +12,12 @@
         </a>
       </div>
     <% end %>
+  </div>
+  </div>
+  <div class="map-big">
+    <div class="map-container"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
