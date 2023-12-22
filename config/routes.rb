@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/sustainability", to: "pages#sustainability", as: :sustainability
 
   resources :items
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :favorites, only: [:index, :create, :destroy]
+  end
   resources :events, only: [:index, :show]
 end

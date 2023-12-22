@@ -10,7 +10,7 @@ puts "Creating users..."
 10.times do |i|
   letter = ('a'..'z').to_a[i]
   User.create!(
-    email: "#{letter}@haven.com",
+    email: "#{letter}@artigiani.com",
     password: "111111",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
