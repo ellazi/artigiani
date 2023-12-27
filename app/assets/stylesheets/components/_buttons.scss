@@ -12,3 +12,12 @@
     color: #fff !important;
   }
 }
+
+.btn-search {
+  background-color: #ffffff74;
+  margin-left: 10px;
+  &:hover {
+    background-color: #000000;
+    color: #fff;
+  }
+}

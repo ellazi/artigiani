@@ -3,7 +3,9 @@ require 'open-uri'
 
 puts "Cleaning database..."
 Event.destroy_all
+Favourite.destroy_all
 User.destroy_all
+Item.destroy_all
 
 puts "Creating users..."
 
@@ -61,5 +63,16 @@ User.where(is_artisan: true).each do |user|
 end
 
 puts "Created #{Item.count} items"
+
+puts "Creating favourites..."
+
+User.where(is_artisan: false).each do |user|
+  3.times do |i|
+    favourite = Favourite.create!(
+      user_id: user.id,
+      item_id: Item.all.sample.id,
+    )
+  end
+end
 
 puts "Finished!"

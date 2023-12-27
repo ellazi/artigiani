@@ -1,6 +1,16 @@
 class ItemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @items = Item.all
+    @item = Item.find_by(id: params[:id])
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        items.description @@ :query
+        OR users.company @@ :query
+      SQL
+      @items = @items.joins(:user).where(sql_subquery, query: params[:query])
+    end
   end
 
   def show

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :items
   resources :users, only: [:index, :show] do
-    resources :favorites, only: [:index, :create, :destroy]
+    resources :favourites, only: [:index, :create, :destroy]
+    # post 'users/:user_id/favourites', to: 'favourites#create', as: 'user_favourites'
   end
   resources :events, only: [:index, :show]
 end

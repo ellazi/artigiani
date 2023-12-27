@@ -1,16 +1,18 @@
 class FavouritesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @favourites = Favourite.all
+    @favourites = Favourite.all.where(user: current_user)
   end
 
   def create
-    @favourite = Favourite.new
-    @favourite.user = current_user
-    @favourite.item = Item.find(params[:item_id])
+    @item = Item.find(params[:id])
+    @user = current_user
+    @favourite = @user.favourites.build(item_id: @item)
     if @favourite.save
-      redirect_to item_path(@favourite.item)
+      redirect_to user_favourites_path(@user), notice: 'Added to favourites!'
     else
-      render 'items/show'
+      redirect_to root_path, notice: 'Failed to add to favourites!'
     end
   end
 

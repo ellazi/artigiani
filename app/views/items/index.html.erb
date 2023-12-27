@@ -1,17 +1,38 @@
+<div class="search">
+  <%= form_with url: items_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search item by artisan or description"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+    <% end %>
+</div>
 <div class="container-custom">
   <div class="row-custom gap-30">
     <% @items.each do |item| %>
       <div class="item-card">
         <a href="<%= item_path(item) %>" class="item-card-a">
           <div class="text">
-            <h3><%= item.name %></h3>
+            <h4><%= item.name %></h4>
             <p><%= item.user.company %></p>
-            <p><%= item.price %> €</p>
+            <p class="price"><%= item.price %> €</p>
           </div>
           <div class="item-img">
             <div class="item-btns">
-              <a href="#" class="item-btn"><i class="fa-solid fa-heart fa-lg"></i></a>
-              <a href="#" class="item-btn"><i class="fa-solid fa-bag-shopping fa-lg"></i></a>
+              <% if user_signed_in? %>
+                <%# <a href="<%= user_favourites_path(current_user, item: @item) %>
+                <%# "  method="post" class="item-btn"><i class="fa-solid fa-heart fa-lg"></i></a> %>
+                <%= form_with(url: user_favourites_path(current_user), method: :post, class: 'item-btn') do %>
+                  <%= hidden_field_tag 'item', item.id %>
+                  <%= button_tag(type: 'submit', class: 'item-btn') do %>
+                    <i class="fa-solid fa-heart fa-lg"></i>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <a href="<%= new_user_session_path %>" class="item-btn"><i class="fa-solid fa-heart fa-xl"></i></a>
+              <% end %>
+              <a href="#" class="item-btn"><i class="fa-solid fa-bag-shopping fa-xl"></i></a>
             </div>
             <%= image_tag(url_for(item.photos.first)) %>
           </div>

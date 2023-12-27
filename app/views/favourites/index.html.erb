@@ -1,3 +1,7 @@
 <div class="container-custom">
   <h1 class="title">Favourites</h1>
+  <div class="row-custom gap-30">
+    <% @favourites.each do |favourite| %>
+      <%= favourite.item %>
+    <% end %>
 </div>
