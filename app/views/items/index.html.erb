@@ -21,13 +21,8 @@
           <div class="item-img">
             <div class="item-btns">
               <% if user_signed_in? %>
-                <%# <a href="<%= user_favourites_path(current_user, item: @item) %>
-                <%# "  method="post" class="item-btn"><i class="fa-solid fa-heart fa-lg"></i></a> %>
-                <%= form_with(url: user_favourites_path(current_user), method: :post, class: 'item-btn') do %>
-                  <%= hidden_field_tag 'item', item.id %>
-                  <%= button_tag(type: 'submit', class: 'item-btn') do %>
-                    <i class="fa-solid fa-heart fa-lg"></i>
-                  <% end %>
+                <%= link_to item_favourites_path(item), data: { turbo_method: :post } do %>
+                  <i class="fa-solid fa-heart fa-lg"></i>
                 <% end %>
               <% else %>
                 <a href="<%= new_user_session_path %>" class="item-btn"><i class="fa-solid fa-heart fa-xl"></i></a>

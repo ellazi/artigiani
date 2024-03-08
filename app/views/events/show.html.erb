@@ -3,7 +3,17 @@
     <h1><%= @event.title %></h1>
     <p><%= @event.location %></p>
     <p><%= @event.description %></p>
-    <p><%= @event.start_time %></p>
-    <p><%= @event.end_time %></p>
+    <p><strong><%= @event.start_time.strftime("%d %B %Y") %></strong><br>
+        From <%= @event.start_time.strftime("%H:%M") %> to <%= @event.end_time.strftime("%H:%M") %></p>
+    <% @event_users.each do |user| %>
+      <%= user.company %>
+    <% end %>
+  </div>
+  <div class="map-big">
+    <div class="map-container"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>

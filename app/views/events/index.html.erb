@@ -7,9 +7,14 @@
         <a href="<%= event_path(event) %>">
           <h3><%= event.title %></h3>
           <p><%= event.location %></p>
-          <p><%= event.description %></p>
-          <p><%= event.start_time.strftime("%d %B %Y, %H:%M") %></p>
-          <p><%= event.end_time.strftime("%d %B %Y, %H:%M") %></p>
+          <p><%= event.description.truncate(30) %></p>
+          <p><strong><%= event.start_time.strftime("%d %B %Y") %></strong><br>
+          From <%= event.start_time.strftime("%H:%M") %> to <%= event.end_time.strftime("%H:%M") %></p>
+          <p>
+            <% @event_users.where(event_id: event).map(&:user).uniq.each do |user| %>
+              <%= user.company %>
+            <% end %>
+          </p>
         </a>
       </div>
     <% end %>

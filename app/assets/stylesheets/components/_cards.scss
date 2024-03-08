@@ -26,19 +26,20 @@
 
 .card-third {
   position: relative;
-  width: calc(33.3% - 2px);
+  width: calc(33.3% - 3px);
   height: 180px;
   background-color: $grey;
-  padding: 150px 0 0 0;
+  padding: 75px 0 0 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h1, h2, h3, h4, h5, h6 {
-    color:#000 !important;
-    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color:#fff !important;
     position: relative;
     z-index: 1;
-    font-family: $body-font;
-    background-color: #fff;
     padding: 5px 30px;
+    bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:  1px 1px 2px rgba(0, 0, 0, 0.592);
   }
   &::before {
     content: "";
@@ -47,7 +48,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     transition: opacity 0.3s ease;
     background-clip: content-box;
     z-index: 0;
@@ -63,19 +64,19 @@
 
 .card-half {
   position: relative;
-  width: calc(50% - 2px);
+  width: calc(50% - 3px);
   background-color: $grey;
   height: 200px;
-  padding: 160px 0 0 0;
+  padding: 85px 0 0 0;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h1, h2, h3, h4, h5, h6 {
-    color:#000 !important;
+    color:#ffffff !important;
     position: relative;
     z-index: 1;
-    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: $body-font;
-    background-color: #fff;
     padding: 5px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:  1px 1px 2px rgba(0, 0, 0, 0.592);
   }
   &::before {
     content: "";
@@ -84,7 +85,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     transition: opacity 0.3s ease;
     background-clip: content-box;
     z-index: 0;
@@ -102,7 +103,7 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
@@ -234,6 +235,10 @@
     .item-btn {
       background: none;
       border: none;
+    }
+
+    .full {
+      color: #fff;
     }
   }
   }

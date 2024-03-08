@@ -3,13 +3,14 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @item = Item.find_by(id: params[:id])
+    # @item = Item.find_by(id: params[:id])
     if params[:query].present?
       sql_subquery = <<~SQL
-        items.description @@ :query
-        OR users.company @@ :query
+        items.description ILIKE :query
+        OR items.name ILIKE :query
+        OR users.company ILIKE :query
       SQL
-      @items = @items.joins(:user).where(sql_subquery, query: params[:query])
+      @items = @items.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 

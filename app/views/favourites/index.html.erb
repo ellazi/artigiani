@@ -1,7 +1,25 @@
 <div class="container-custom">
-  <h1 class="title">Favourites</h1>
+  <h1 class="title">Your Favourites</h1>
+
   <div class="row-custom gap-30">
     <% @favourites.each do |favourite| %>
-      <%= favourite.item %>
+      <div class="item-card">
+        <a href="<%= item_path(favourite.item) %>" class="item-card-a">
+          <div class="text">
+            <h4><%= favourite.item.name %></h4>
+            <p><%= favourite.item.user.company %></p>
+            <p class="price"><%= favourite.item.price %> €</p>
+          </div>
+          <div class="item-img">
+            <div class="item-btns">
+              <%= link_to favourite_path(favourite), data: { turbo_method: :delete } do %>
+                  <i class="fa-solid fa-heart fa-lg full"></i>
+              <% end %>
+            </div>
+            <%= image_tag(url_for(favourite.item.photos.first)) %>
+          </div>
+        </a>
+      </div>
     <% end %>
+  </div>
 </div>

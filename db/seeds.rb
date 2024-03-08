@@ -2,6 +2,7 @@ require 'faker'
 require 'open-uri'
 
 puts "Cleaning database..."
+EventUser.destroy_all
 Event.destroy_all
 Favourite.destroy_all
 User.destroy_all
@@ -31,16 +32,30 @@ User.where(is_artisan: true).each do |user|
   3.times do |i|
     month = rand(1..12)
     day = rand(1..28)
-    Event.create!(
+    starting_time = rand(9..18)
+    ending_time = starting_time + rand(1..4)
+    event = Event.create!(
       title: Faker::Tea.variety,
       description: Faker::Lorem.paragraph_by_chars,
       location: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.country,
-      start_time: Time.new(2024, month, day),
-      end_time: Time.new(2024, month, day),
-      user_id: user.id,
+      start_time: Time.new(2024, month, day, starting_time),
+      end_time: Time.new(2024, month, day, ending_time),
       latitude: Faker::Address.latitude,
       longitude: Faker::Address.longitude,
     )
+    # EventUser.create!(event: event, user: user)
+  end
+end
+
+artisans = User.where(is_artisan: true)
+
+puts "Create event users..."
+
+artisans.each do |user|
+  3.times do |i|
+    Event.all.each do |event|
+      EventUser.create!(event: event, user: user)
+    end
   end
 end
 
@@ -48,7 +63,7 @@ puts "Created #{Event.count} events"
 
 puts "Creating items..."
 
-User.where(is_artisan: true).each do |user|
+artisans.each do |user|
   5.times do |i|
     item = Item.create!(
       name: Faker::Coffee.blend_name,

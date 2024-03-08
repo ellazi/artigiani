@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get "/materials", to: "pages#materials", as: :materials
   get "/sustainability", to: "pages#sustainability", as: :sustainability
 
-  resources :items
-  resources :users, only: [:index, :show] do
-    resources :favourites, only: [:index, :create, :destroy]
-    # post 'users/:user_id/favourites', to: 'favourites#create', as: 'user_favourites'
+  resources :items do
+    resources :favourites, only: :create
   end
+  resources :users, only: [:index, :show]
   resources :events, only: [:index, :show]
+  resources :favourites, only: [:index, :destroy]
 end
