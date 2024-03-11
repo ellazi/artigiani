@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @artisan = User.find(params[:id])
+    @artisan = User.all.where(is_artisan: true).find(params[:id])
+    @items = Item.all.where(user_id: @artisan.id)
+    @event_users = EventUser.all.where(user_id: @artisan.id).map(&:event).uniq.first(3)
   end
 end

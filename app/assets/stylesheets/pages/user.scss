@@ -1,0 +1,36 @@
+// Styling of the user page
+
+.user-left-col {
+  width: 55%;
+  margin-right: 60px;
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  padding-bottom: 30px;
+  h4 {
+    margin-top: 40px;
+  }
+}
+.user-right-col {
+  width: 45%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.user-info {
+  width: 100%;
+  gap: 30px;
+  p {
+    margin: 0;
+  }
+}
+
+.ninety {
+  width: 90%;
+  margin: 0 auto;
+}
