@@ -64,7 +64,7 @@ puts "Created #{Event.count} events"
 puts "Creating items..."
 
 artisans.each do |user|
-  5.times do |i|
+  7.times do |i|
     item = Item.create!(
       name: Faker::Coffee.blend_name,
       description: Faker::Lorem.paragraph_by_chars,

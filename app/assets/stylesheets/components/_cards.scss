@@ -249,10 +249,12 @@
 .item-card-sm {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   z-index: 0;
+  background-color: #ecebe7;
+  border-radius: 5px;
   &:hover {
     h5, p {
       color: #000;
@@ -269,15 +271,16 @@
 }
 
 .item-card-a-sm {
-  width: 300px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   position: absolute;
   cursor: pointer;
   .item-img {
     img {
       width: 100%;
-      max-height: 200px;
+      max-height: 220px;
       object-fit: cover;
+      border-radius: 5px;
     }
   }
   .text {

@@ -9,5 +9,11 @@ class UsersController < ApplicationController
     @artisan = User.all.where(is_artisan: true).find(params[:id])
     @items = Item.all.where(user_id: @artisan.id)
     @event_users = EventUser.all.where(user_id: @artisan.id).map(&:event).uniq.first(3)
+    @markers = [
+      {
+        lat: @artisan.latitude,
+        lng: @artisan.longitude
+      }
+    ]
   end
 end
