@@ -1,13 +1,21 @@
-<div class="container-custom">
-  <div class="row-custom gap-30">
-    <% @artisans.each do |artisan| %>
-      <div class="artisan-card">
-        <a href="<%= user_path(artisan) %>">
-          <h3><%= artisan.company %></h3>
-          <p><%= artisan.location %></p>
-          <p><%= artisan.description %></p>
-        </a>
-      </div>
+<div class="search margin-top-minus">
+  <%= form_with url: items_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search item by artisan or description"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-search" %>
     <% end %>
+</div>
+<div class="container-artisans">
+  <% @artisans.each do |artisan| %>
+  <div class="artisan-card" style="background-image: url('<%= url_for(artisan.photo) %>')">
+    <a href="<%= user_path(artisan) %>" class="card-text">
+      <h3><%= artisan.company %></h3>
+      <p><%= artisan.location %></p>
+      <p><%= artisan.description %></p>
+    </a>
   </div>
+  <% end %>
 </div>

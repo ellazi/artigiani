@@ -1,7 +1,12 @@
 .form-control {
-  border-radius: 3px !important;
+  border-radius: 50px !important;
   background-color: $extra-light-grey !important;
+  border: none;
   &:focus {
     border: none;
+  }
+  &:hover {
+    background-color: $light-grey !important;
+    transition-duration: 0.2s;
   }
 }

@@ -1,6 +1,8 @@
 .search {
-  width: 100%;
+  width: 50%;
   height: 60px;
-  padding: 12px 70px;
-  background-color: $light-grey;
+  padding: 16px 70px;
+  z-index: 105;
+  right: 0;
+  position: fixed;
 }

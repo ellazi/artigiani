@@ -2,6 +2,7 @@
   <p class="logo"><%= link_to "Artigiani", root_path %></p>
   <p>|</p>
   <ul class="nav-links">
+    <li><%= link_to "ARTISANS", users_path %></li>
     <li><%= link_to "EVENTS", events_path %></li>
     <li><%= link_to "MARKET", items_path %></li>
     <% if user_signed_in? %>

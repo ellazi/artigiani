@@ -10,25 +10,38 @@ Item.destroy_all
 
 puts "Creating users..."
 
-10.times do |i|
+total_users = 20
+total_artisans = 6
+
+total_users.times do |i|
   letter = ('a'..'z').to_a[i]
-  User.create!(
+  # random_num = rand(1..6)
+
+  user = User.create!(
     email: "#{letter}@artigiani.com",
     password: "111111",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    location: Faker::Address.city,
-    is_artisan: rand(0..1),
-    description: Faker::Lorem.paragraph_by_chars,
-    company: Faker::Company.name,
+    is_artisan: i < total_artisans ? 1 : 0,
+    company: i < total_artisans ? Faker::Company.name : nil,
+    description: i < total_artisans ? Faker::Lorem.paragraph_by_chars : nil,
+    location: i < total_artisans ? Faker::Address.city : nil,
   )
 end
 
 puts "Created #{User.count} users"
 
+artisans = User.where(is_artisan: true)
+
+n = 1
+artisans.each do |user|
+  user.photo.attach(io: File.open("app/assets/images/artisan_#{n}.jpg"), filename: "artisan_#{n}.jpg", content_type: 'image/jpeg')
+  n += 1
+end
+
 puts "Creating events..."
 
-User.where(is_artisan: true).each do |user|
+artisans.each do |user|
   3.times do |i|
     month = rand(1..12)
     day = rand(1..28)
@@ -43,11 +56,8 @@ User.where(is_artisan: true).each do |user|
       latitude: Faker::Address.latitude,
       longitude: Faker::Address.longitude,
     )
-    # EventUser.create!(event: event, user: user)
   end
 end
-
-artisans = User.where(is_artisan: true)
 
 puts "Create event users..."
 

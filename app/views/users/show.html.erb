@@ -1,8 +1,11 @@
-<div class="container-custom">
+<div class="banner-artisan">
+  <div class="back" style="background-image: url('<%= url_for(@artisan.photo) %>')">
+  </div>
   <h1><%= "#{@artisan.company}" %></h1>
+</div>
+<div class="container-custom">
   <div class="flex">
     <div class="user-left-col">
-      <%= image_tag(url_for(@items.all.last.photos.last)) %>
       <div class="flex ninety">
         <div class="user-info">
           <h4>CONTACTS</h4>

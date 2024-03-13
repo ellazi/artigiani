@@ -4,6 +4,14 @@
   width: 100%;
 }
 
+.container-home {
+  margin: 0 auto;
+  border-top: 1px solid #000000b2;
+  padding: 0 0 50px 0;
+  width: 100%;
+  height: fit-content;
+}
+
 .container-60 {
   width: 600px;
   margin: 0 auto;
@@ -26,4 +34,22 @@
   img {
     margin-bottom: 30px;
   }
+}
+
+body {
+  background-color: #e7e7e7;
+}
+
+.general-margin-top {
+  margin-top: 70px;
+}
+
+.margin-top-minus {
+  margin-top: -70px;
+}
+
+.container-artisans {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 70px;
 }
