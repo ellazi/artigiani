@@ -9,19 +9,19 @@
 }
 
 .card2 {
-  background-image: asset-url('market.jpg');
+  background-image: asset-url('card3.jpg');
 }
 
 .card3 {
-  background-image: asset-url('buttons.jpg');
+  background-image: asset-url('card2.jpg');
 }
 
 .card4 {
-  background-image: asset-url('card4.jpg');
+  background-image: asset-url('card5.jpg');
 }
 
 .card5 {
-  background-image: asset-url('events.jpg');
+  background-image: asset-url('card4.jpg');
 }
 
 .card-third {
@@ -29,14 +29,16 @@
   width: calc(100%/5);
   height: 180px;
   background-color: $grey;
-  padding: 75px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   h1, h2, h3, h4, h5, h6 {
     color:#fff !important;
     position: relative;
     z-index: 1;
-    padding: 5px 30px;
     bottom: 0;
+    margin: 0;
     text-align: center;
     text-transform: uppercase;
     text-shadow:  2px 2px 3px rgba(0, 0, 0, 1);
@@ -54,7 +56,7 @@
     z-index: 0;
   }
   &:hover::before {
-    opacity: 0;
+    opacity: 0.5;
     z-index: 0;
   }
   @media (max-width: 768px) {
@@ -62,42 +64,6 @@
   }
 }
 
-// .card-half {
-//   position: relative;
-//   width: 100%;
-//   background-color: $grey;
-//   height: 200px;
-//   padding: 85px 0 0 0;
-//   // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-//   h1, h2, h3, h4, h5, h6 {
-//     color:#ffffff !important;
-//     position: relative;
-//     z-index: 1;
-//     padding: 5px 30px;
-//     text-align: center;
-//     text-transform: uppercase;
-//     text-shadow:  1px 1px 2px rgba(0, 0, 0, 0.592);
-//   }
-//   &::before {
-//     content: "";
-//     position:absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-//     transition: opacity 0.3s ease;
-//     background-clip: content-box;
-//     z-index: 0;
-//   }
-//   &:hover::before {
-//     opacity: 0;
-//     z-index: 0;
-//   }
-//   @media (max-width: 768px) {
-//     width: 100%;
-//   }
-// }
 
 .row-custom {
   width: 100%;
@@ -105,12 +71,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  // margin-bottom: 3px;
 }
-
-// .gap-5 {
-//   gap: 2px !important;
-// }
 
 .gap-15 {
   gap: 15px;
@@ -120,20 +81,6 @@
   gap: 30px;
 }
 
-// artisans
-// .artisan-card {
-//   width: calc(33% - 20px);
-//   height: 400px;
-//   padding: 20px;
-//   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-//   &:hover {
-//     background-color: $extra-light-grey;
-//     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-//     h3, p {
-//       color: #000;
-//     }
-//   }
-// }
 .artisan-card {
   width: 100%;
   height: 400px;

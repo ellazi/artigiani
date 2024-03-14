@@ -8,17 +8,20 @@
     <div class="user-left-col">
       <div class="flex ninety">
         <div class="user-info">
-          <h4>CONTACTS</h4>
-          <p><%= @artisan.email %></p>
-          <h4>EVENTS</h4>
-          <% @event_users.each do |event| %>
-          <div class="flex">
-            <p><%= event.title %></p><p><%= event.start_time.strftime("%d %B %Y") %></p>
+          <div class="user-info-child">
+            <h4>WHERE</h4>
+            <p><%= @artisan.location %></p>
           </div>
-          <% end %>
+          <div class="user-info-child">
+            <h4>EVENTS</h4>
+            <% @event_users.each do |event| %>
+            <div class="flex">
+              <p><%= event.title %></p><p><%= event.start_time.strftime("%d %B %Y") %></p>
+            </div>
+            <% end %>
+          </div>
         </div>
         <div class="user-info">
-          <h4>WHERE FROM</h4>
           <div class="map-user">
             <div class="map-container"
             data-controller="map"

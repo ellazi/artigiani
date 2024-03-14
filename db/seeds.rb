@@ -23,9 +23,9 @@ total_users.times do |i|
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     is_artisan: i < total_artisans ? 1 : 0,
-    company: i < total_artisans ? Faker::Company.name : nil,
-    description: i < total_artisans ? Faker::Lorem.paragraph_by_chars : nil,
-    location: i < total_artisans ? Faker::Address.city : nil,
+    company: i < total_artisans ? User::ARTISANS[i] : nil,
+    description: i < total_artisans ? User::DESCRIPTIONS[i] : nil,
+    location: i < total_artisans ? User::ADDRESSES[i] : nil,
   )
 end
 

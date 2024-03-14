@@ -14,7 +14,7 @@
     <a href="<%= user_path(artisan) %>" class="card-text">
       <h3><%= artisan.company %></h3>
       <p><%= artisan.location %></p>
-      <p><%= artisan.description %></p>
+      <p style="margin-top: 70px;"><%= artisan.description.truncate(250) %></p>
     </a>
   </div>
   <% end %>

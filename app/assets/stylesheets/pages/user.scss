@@ -20,8 +20,14 @@
 .user-info {
   width: 100%;
   gap: 30px;
+  h4 {
+    margin-top: 0;
+  }
   p {
     margin: 0;
+  }
+  .user-info-child {
+    margin-bottom: 30px;
   }
 }
 
@@ -33,6 +39,6 @@
 
 .map-user {
   width: 100%;
-  height: 200px;
-  margin: 10px 0 20px 0;
+  height: 220px;
+  margin: 0 0 20px 0;
 }
