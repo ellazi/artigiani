@@ -1,8 +1,29 @@
 <div class="container-custom general-margin-top">
-  <div>
-    <h1><%= @item.name %></h1>
-    <p><%= @item.user.company %></p>
-    <p><%= @item.description %></p>
-    <p><%= @item.price %></p>
+  <div class="flex">
+    <div class="item-left-col">
+      <div>
+        <h1><%= link_to @item.user.company, user_path(@item.user) %></h1>
+        <h3><%= @item.name %></h3>
+        <p><%= @item.description %></p>
+        <p>€ <%= @item.price %></p>
+      </div>
+      <div>
+        <h5>Other items by <strong><%= @item.user.company %></strong></h5>
+        <div class="item-grid">
+        <% @items.sample(3).each do |item| %>
+          <div class="item-card-xs">
+            <a href="<%= item_path(item) %>" class="item-card-a-xs">
+              <div class="item-img">
+                <%= image_tag(url_for(item.photos.first)) %>
+              </div>
+            </a>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="item-right-img">
+      <%= image_tag(url_for(@item.photos.first))  %>
+    </div>
   </div>
 </div>

@@ -41,33 +41,39 @@ end
 
 puts "Creating events..."
 
-artisans.each do |user|
-  3.times do |i|
+12.times do |i|
     month = rand(1..12)
     day = rand(1..28)
     starting_time = rand(9..18)
     ending_time = starting_time + rand(1..4)
     event = Event.create!(
-      title: Faker::Tea.variety,
-      description: Faker::Lorem.paragraph_by_chars,
-      location: Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.country,
+      title: Event::TITLES[i],
+      description: Event::DESCRIPTIONS[i],
+      location: Event::LOCATIONS[i],
       start_time: Time.new(2024, month, day, starting_time),
       end_time: Time.new(2024, month, day, ending_time),
-      latitude: Faker::Address.latitude,
-      longitude: Faker::Address.longitude,
+      # latitude: Faker::Address.latitude,
+      # longitude: Faker::Address.longitude,
     )
   end
-end
 
 puts "Create event users..."
 
+events = Event.all
+
 artisans.each do |user|
-  3.times do |i|
-    Event.all.each do |event|
-      EventUser.create!(event: event, user: user)
-    end
+  events.sample(2).each do |event|
+    EventUser.create!(event: event, user: user)
   end
 end
+
+# artisans.each do |user|
+#   2.times do |i|
+#     Event.all.each do |event|
+#       EventUser.create!(event: event, user: user)
+#     end
+#   end
+# end
 
 puts "Created #{Event.count} events"
 

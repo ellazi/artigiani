@@ -1,14 +1,15 @@
 .row-event {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 30px;
-  width: 700px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  width: 100%;
 }
 
 .map-big {
-  width: 600px;
-  height: 900px;
-  margin-bottom: 30px;
+  width: 100%;
+  height: 350px;
 }
 
 .map-container {

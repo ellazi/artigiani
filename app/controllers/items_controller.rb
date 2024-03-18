@@ -16,5 +16,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find_by(id: params[:id])
+    @items = Item.all.where(user_id: @item.user_id)
   end
 end

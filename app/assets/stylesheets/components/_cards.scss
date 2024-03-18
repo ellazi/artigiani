@@ -110,12 +110,14 @@
 
 // events
 .event-card {
-  height: 450px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 300px;
+  width: calc(100%/5);
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 20px;
+  background-color: #fff;
   &:hover {
     background-color: $extra-light-grey;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    // box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     h3, p {
       color: #000;
     }
@@ -264,5 +266,35 @@
     position: absolute;
     height: 80px;
     color: #000;
+  }
+}
+
+.item-card-xs {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  height: 190px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 0;
+  background-color: #ecebe7;
+  border-radius: 5px;
+  &:hover {
+    background-color: $light-yellow;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+}
+
+.item-card-a-xs {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  cursor: pointer;
+  .item-img {
+    img {
+      width: 100%;
+      max-height: 190px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
   }
 }

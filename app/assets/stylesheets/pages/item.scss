@@ -1,0 +1,25 @@
+.item-left-col {
+  width: 50%;
+  height: 580px;
+  margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-right-img {
+  width: 50%;
+  height: 580px;
+  img {
+    height: 580px;
+  }
+}
+
+.item-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 20px;
+}

@@ -1,15 +1,16 @@
-<div class="general-margin-minus">
-  <%= render "shared/searchbar"%>
+<div class="map-big general-margin-top">
+  <div class="map-container"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-<div class="container-custom flex">
-  <div>
-  <div class="row-event gap-30">
+<div>
+  <div class="row-event">
     <% @events.each do |event| %>
       <div class="event-card">
         <a href="<%= event_path(event) %>">
           <h3><%= event.title %></h3>
           <p><%= event.location %></p>
-          <p><%= event.description.truncate(30) %></p>
           <p><strong><%= event.start_time.strftime("%d %B %Y") %></strong><br>
           From <%= event.start_time.strftime("%H:%M") %> to <%= event.end_time.strftime("%H:%M") %></p>
           <p>
@@ -20,12 +21,5 @@
         </a>
       </div>
     <% end %>
-  </div>
-  </div>
-  <div class="map-big">
-    <div class="map-container"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
