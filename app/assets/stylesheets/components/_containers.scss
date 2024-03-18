@@ -28,6 +28,13 @@
   align-items: start;
   gap: 30px;
 }
+.flex-50 {
+  width: 50%;
+  img {
+    width: 100%;
+    margin-left: 20px;
+  }
+}
 
 .flex-images {
   margin-top: 100px;

@@ -15,7 +15,6 @@ total_artisans = 6
 
 total_users.times do |i|
   letter = ('a'..'z').to_a[i]
-  # random_num = rand(1..6)
 
   user = User.create!(
     email: "#{letter}@artigiani.com",
@@ -42,38 +41,35 @@ end
 puts "Creating events..."
 
 12.times do |i|
-    month = rand(1..12)
-    day = rand(1..28)
-    starting_time = rand(9..18)
-    ending_time = starting_time + rand(1..4)
-    event = Event.create!(
-      title: Event::TITLES[i],
-      description: Event::DESCRIPTIONS[i],
-      location: Event::LOCATIONS[i],
-      start_time: Time.new(2024, month, day, starting_time),
-      end_time: Time.new(2024, month, day, ending_time),
-      # latitude: Faker::Address.latitude,
-      # longitude: Faker::Address.longitude,
-    )
-  end
-
-puts "Create event users..."
+  month = rand(1..12)
+  day = rand(1..28)
+  starting_time = rand(9..18)
+  ending_time = starting_time + rand(1..4)
+  event = Event.create!(
+    title: Event::TITLES[i],
+    description: Event::DESCRIPTIONS[i],
+    location: Event::LOCATIONS[i],
+    start_time: Time.new(2024, month, day, starting_time),
+    end_time: Time.new(2024, month, day, ending_time),
+  )
+end
 
 events = Event.all
+
+m = 1
+events.each do |event|
+  event.photo.attach(io: File.open("app/assets/images/market#{m}.jpg"), filename: "market#{m}.jpg", content_type: 'image/jpeg')
+  event.save!
+  m += 1
+end
+
+puts "Create event users..."
 
 artisans.each do |user|
   events.sample(2).each do |event|
     EventUser.create!(event: event, user: user)
   end
 end
-
-# artisans.each do |user|
-#   2.times do |i|
-#     Event.all.each do |event|
-#       EventUser.create!(event: event, user: user)
-#     end
-#   end
-# end
 
 puts "Created #{Event.count} events"
 
