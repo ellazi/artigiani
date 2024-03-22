@@ -16,7 +16,9 @@
             <h4>EVENTS</h4>
             <% @event_users.each do |event| %>
             <div class="flex">
-              <p><%= event.title %></p><p><%= event.start_time.strftime("%d %B %Y") %></p>
+              <%= link_to event_path(event) do %>
+              <p><%= event.title %> • <%= event.start_time.strftime("%d %B %Y") %></p>
+              <% end %>
             </div>
             <% end %>
           </div>
